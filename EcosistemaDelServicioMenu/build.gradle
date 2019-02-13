@@ -1,0 +1,52 @@
+
+//group 'co.com.bancolombia.certificacion'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'eclipse'
+apply plugin: 'net.serenity-bdd.aggregator'
+sourceCompatibility = 1.8
+
+repositories {
+//			    maven {
+//			         url 'http://artifactory.bancolombia.corp:80/maven-bancolombia'
+//			    }
+			    
+    mavenLocal()
+    jcenter()			    
+}
+
+
+buildscript {
+    repositories {
+//        maven {
+//           url 'http://artifactory.bancolombia.corp:80/maven-bancolombia'
+//        }
+        
+        mavenLocal()
+        jcenter()      
+    }
+    
+    dependencies {
+        classpath("net.serenity-bdd:serenity-gradle-plugin:1.9.9")
+    }
+}
+
+ext{
+	 serenityCucumberVersion = '1.9.7'
+}
+
+
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    implementation(group: 'co.com.bancolombia.certificacion', name: 'manualtestSerenityBDD', version: '1.0.0')
+    implementation "net.serenity-bdd:serenity-cucumber:$rootProject.ext.serenityCucumberVersion"
+//    implementation(group: 'co.com.bancolombia.certificacion', name: 'eds', version: '1.0.0')
+}
+
+task wrapper(type: Wrapper) {
+   gradleVersion = '4.4'
+//   distributionUrl 'http://artifactory.bancolombia.corp/gradlew/gradle-4.4-bin.zip'
+}

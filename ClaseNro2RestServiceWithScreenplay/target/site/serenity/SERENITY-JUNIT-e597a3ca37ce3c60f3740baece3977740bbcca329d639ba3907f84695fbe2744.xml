@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="1" name="Request a REST API with Screenplay" skipped="0" tests="1" time="6.39" timestamp="2018-10-30 04:42:47"><testcase name="Simple GET Request"><failure message="1 expectation failed.&#10;JSON path data.first_Name doesn't match.&#10;Expected: George&#10;  Actual: null&#10;" type="java.lang.AssertionError">1 expectation failed.
+JSON path data.first_Name doesn't match.
+Expected: George
+  Actual: null
+</failure><system-err>1 expectation failed.
+JSON path data.first_Name doesn't match.
+Expected: George
+  Actual: null
+&#13;
+co.com.qvision.capacitacion.stepdefinitions.CallRestServiceWithScreenplay.jorgeVerifiesTheQualityResponse(CallRestServiceWithScreenplay.java:33)&#13;
+✽.jorge verifies the quality response(src/test/resources/features/call_rest_service_with_screenplay.feature:8)&#13;
+</system-err></testcase></testsuite>
